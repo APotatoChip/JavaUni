@@ -12,5 +12,6 @@ public class Swap {
 		x = y;
 		y = temp;
 		System.out.println("x is "+x+" and y is "+y);
+		scan.close();
     }
 }
