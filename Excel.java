@@ -3,61 +3,48 @@ public class Excel {
   public static void main(String[] args){
     Scanner sc = new Scanner(System.in);
     System.out.print("x: ");
-    float x = sc.nextFloat();
+    double x = sc.nextDouble();
     System.out.print("y: ");
-    float y = sc.nextFloat();
+    double y = sc.nextDouble();
     System.out.print("z: ");
-    float z = sc.nextFloat();
+    double z = sc.nextDouble();
     sc.nextLine();
     System.out.print("Function: ");
-    String fn = sc.nextLine();
-    float result;
+    String fn = sc.next();
+    double result=0;
+    boolean flag=false;
     sc.close();
-    switch(fn){
-        case "SUM":
+
+    if(fn.equals("SUM")){
         result=x+y+z;
-        System.out.print("Result: ");
-        System.out.printf("%.4f",result);
-        break;
-        case "AVERAGE":
+        flag=true;
+    }else if(fn.equals("AVERAGE")){
         result=(x+y+z)/3;
-        System.out.print("Result: ");
-        System.out.printf("%.4f",result);
-        break;
-        case "MIN":
-        System.out.print("Result: ");
+        flag=true;
+    }else if(fn.equals("MIN")){
+        flag=true;
         if(x<y && x<z){
             result=x;
-        
         }else if(y<x && y<z){
             result=y;
-
         }else{
             result=z;
-      
         }
-        System.out.printf("%.4f",result);
-        break;
-        case "MAX":
-        System.out.print("Result: ");
+    }else if(fn.equals("MAX")){
+        flag=true;
         if(x>y && x>z){
             result=x;
-            
-
         }else if(y>x && y>z){
             result=y;
-           
-
         }else{
             result=z;
-           
         }
-        System.out.printf("%.4f",result);
-        break;
-        default:
+    }else{
         System.out.print("Unsupported function");
-        break;
     }
-
+    if(flag){
+        System.out.print("Result: ");
+        System.out.printf("%.4f",result);
+    }
   }  
 }
