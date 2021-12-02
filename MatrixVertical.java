@@ -1,6 +1,5 @@
 import java.util.Scanner;
-import java.io.*;
-import java.util.*;
+
 public class MatrixVertical{
     public static void main (String[] args){
         Scanner scan = new Scanner(System.in);
@@ -10,6 +9,7 @@ public class MatrixVertical{
         int columns=scan.nextInt();
         int curr=1;
         int [][] matrix = new int[columns][rows];
+        scan.close();
         for(int i=0;i<columns;i++){
             for(int j=0;j<rows;j++){
                 matrix[i][j]=curr;
